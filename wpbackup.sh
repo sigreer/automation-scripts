@@ -1,6 +1,5 @@
 #!/bin/bash
-$websitedb = 
-$websitedir
+source .env
 cd ~/
-mysqldump -u webdb -pOliverTw1st --add-drop-table -h localhost tilttech | bzip2 -c > backup.sql.bz2
+mysqldump -u $dbuser -p$sqlpass --add-drop-table -h localhost $db | bzip2 -c > $db.sql.bz2
 cp -Rp
