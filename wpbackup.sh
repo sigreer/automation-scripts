@@ -35,7 +35,7 @@ tar -zcvf $dbname.tar.gz $dbname.sql.bz2 $dbname-files.tar.gz
 if [ -f "./$dbname.tar.gz" ]
 then
   echo "Successfully backed your site up to $dbname.tar.gz"
-  rm ./{$dbname.sql.bz2,$dbname.tar.gz}
+  rm ./{$dbname.sql.bz2,$dbname-files.tar.gz}
 else
   echo "Looks like something went wrong whilst generating your final backup file"
   exit 0
