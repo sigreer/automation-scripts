@@ -15,11 +15,11 @@ else
 fi
 echo "creating tar for web files..."
 tar -zcvf $dbname-files.tar.gz $websiteroot
-if [ -f "./$dbname.tar.gz" ]
+if [ -f "./$dbname-files.tar.gz" ]
 then
-  echo "Successfully backed your site up to $dbname.tar.gz"
+  echo "Successfully backed your site up to $dbname-files.tar.gz"
 else
-  echo "Looks like something went wrong whilst generating DB file"
+  echo "Looks like something went wrong whilst backing up your websites files"
   exit 0
 fi
 mysqldump -u $sqluser -p$sqlpass --add-drop-table -h localhost $dbname | bzip2 -c > $dbname.sql.bz2
