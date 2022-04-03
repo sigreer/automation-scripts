@@ -5,13 +5,13 @@ echo "Found .env file in current directory"
 source .env
 else
    echo "Couldn't find .env file in current directory, please enter DB name:"
-   read $dbname
+   read dbname
    echo "Please enter SQL username:"
-   read $sqluser
+   read sqluser
    echo "Please enter SQL password:"
-   read -s $sqlpass
+   read -s sqlpass
    echo "Please enter the full path of your root website directory:"
-   read $websiteroot
+   read websiteroot
 fi
 echo "creating tar for web files..."
 tar -zcvf $dbname-files.tar.gz $websiteroot
